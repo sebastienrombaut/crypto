@@ -1,0 +1,25 @@
+
+
+<div id = "center" class = "w3-card w3-yellow w3-display-middle w3-padding-64 w3-padding-large">
+
+<h1>Crypt0Rails</h1>
+
+<form>
+<%= form_tag(home_index_path, method: "get") do |f| %>
+    <%= label_tag :curency %><br>
+    <%= select_tag :currency, options_for_select(@namecur)  %>
+    <%= submit_tag :Submit, :class =>"w3-button w3-black"%>
+<% end %>
+</form>
+
+
+
+<%unless @currency == nil %>
+<div class="w3-card w3-red w3-padding-16 w3-padding w3-margin">
+<p> Currency :  <%= @currency %></p>
+ <p> Price : <%= @findprice %></p>
+ </div>
+<% end %>
+
+
+</div>
